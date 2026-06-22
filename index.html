@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Donations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+    <h2>Support Our Server</h2>
+    <p>Select a coin to view the donation address:</p>
+    
+    <select id="coin-select">
+        <option value="btc" data-addr="YOUR_BITCOIN_ADDRESS_HERE">Bitcoin (BTC)</option>
+        <option value="ltc" data-addr="YOUR_LITECOIN_ADDRESS_HERE">Litecoin (LTC)</option>
+        <option value="eth" data-addr="YOUR_ETHEREUM_ADDRESS_HERE">Ethereum (ETH)</option>
+    </select>
+
+    <div id="address-box">Select a coin</div>
+    <button id="copy-btn">Copy Address</button>
+    
+    <div id="qr-container"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
