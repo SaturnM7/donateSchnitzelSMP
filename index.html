@@ -5,23 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Donations</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="box">
-    <h2>Support Our Server</h2>
-    <p>Select a coin to view the donation address:</p>
-    
-    <select id="coin-select">
-        <option value="btc" data-addr="YOUR_BITCOIN_ADDRESS_HERE">Bitcoin (BTC)</option>
-        <option value="ltc" data-addr="YOUR_LITECOIN_ADDRESS_HERE">Litecoin (LTC)</option>
-        <option value="eth" data-addr="YOUR_ETHEREUM_ADDRESS_HERE">Ethereum (ETH)</option>
-    </select>
+<div class="container">
+    <header>
+        <h1 class="glow">Donations</h1>
+        <p class="subtitle">Support SchnitzelSMP</p>
+    </header>
 
-    <div id="address-box">Select a coin</div>
-    <button id="copy-btn">Copy Address</button>
-    
-    <div id="qr-container"></div>
+    <main>
+        <section class="about">
+            <p style="margin-bottom: 30px;">Select a coin to view the donation address</p>
+        </section>
+
+        <div class="expandable-container">
+            <!-- The Slide-out Selector -->
+            <div class="custom-select" id="coin-select-wrapper">
+                <div class="select-trigger" id="select-trigger">
+                    <span id="selected-coin-name">Select a coin</span>
+                    <div class="arrow"></div>
+                </div>
+                
+                <div class="options-menu" id="options-menu">
+                    <div class="option" data-addr="bc1qxy2kgdy6jrsq4z6hrzed6p782df8rxltxsaz02">Bitcoin (BTC)</div>
+                    <div class="option" data-addr="LQT5vVshf3p6YpT8U6z1Y8pX4z6hrzed6p">Litecoin (LTC)</div>
+                    <div class="option" data-addr="0x71C7656EC7ab88b098defB751B7401B5f6d8976F">Ethereum (ETH)</div>
+                </div>
+            </div>
+
+            <!-- Address Display -->
+            <div id="address-box" class="ip-box">
+                <code id="address-text">---</code>
+            </div>
+
+            <button id="copy-btn" class="link-card-btn">Copy Address</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>You might be the reason we can improve this server! ;)</p>
+    </footer>
 </div>
 
 <script src="script.js"></script>
