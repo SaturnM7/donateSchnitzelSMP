@@ -1,63 +1,14 @@
-/* Catppuccin Mocha Palette */
-:root {
-    --base: #1e1e2e;
-    --mantle: #181825;
-    --surface0: #313244;
-    --surface1: #45475a;
-    --text: #cdd6f4;
-    --subtext: #a6adc8;
-    --lavender: #b4befe;
-    --mauve: #cba6f7;
-    --green: #a6e3a1;
-    --red: #f38ba8;
-}
+/* --- SPENDEN INTERFACE ERGÄNZUNGEN (Gruvbox Hard-Edge) --- */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: var(--base);
-    color: var(--text);
-    font-family: 'JetBrains Mono', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 500px;
-    text-align: center;
-}
-
-.glow {
-    color: var(--lavender);
-    font-size: 3.5rem;
-    text-shadow: 0 0 15px rgba(203, 166, 247, 0.4);
-    margin-bottom: 0.5rem;
-}
-
-.subtitle {
-    color: var(--subtext);
-    margin-bottom: 2rem;
-}
-
-/* Container: Removed overflow:hidden so menu can slide out */
 .expandable-container {
-    background-color: var(--surface0);
-    border-radius: 16px;
+    background-color: var(--bg-element);
+    border-radius: 0px; /* Harte Ecken */
     padding: 2rem;
-    border: 1px solid var(--surface1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 2px solid var(--bg-border);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.3);
     position: relative;
 }
 
-/* --- CUSTOM SELECTOR --- */
 .custom-select {
     position: relative;
     width: 100%;
@@ -66,87 +17,86 @@ body {
 }
 
 .select-trigger {
-    background-color: var(--mantle);
-    color: var(--lavender);
-    border: 1px solid var(--surface1);
+    background-color: var(--bg-main);
+    color: var(--accent-blue);
+    border: 2px solid var(--bg-border);
     padding: 1rem 1.2rem;
-    border-radius: 12px;
+    border-radius: 0px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    transition: all 0.15s ease-in-out;
 }
 
 .select-trigger:hover {
-    background-color: var(--base);
+    background-color: var(--bg-border);
+    color: var(--accent-yellow);
 }
 
+/* Kantiger Custom Pfeil */
 .arrow {
     width: 8px;
     height: 8px;
-    border-right: 2px solid var(--lavender);
-    border-bottom: 2px solid var(--lavender);
+    border-right: 2px solid var(--accent-blue);
+    border-bottom: 2px solid var(--accent-blue);
     transform: rotate(45deg);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s cubic-bezier(0, 1, 0, 1);
     margin-bottom: 4px;
 }
 
-/* The Slide-out Menu */
 .options-menu {
     position: absolute;
-    top: 110%;
+    top: 100%;
     left: 0;
     right: 0;
-    background-color: var(--mantle);
-    border: 1px solid var(--surface1);
-    border-radius: 12px;
-    z-index: 100; /* Ensure it stays above the address box */
+    background-color: var(--bg-main);
+    border: 2px solid var(--bg-border);
+    border-top: none;
+    border-radius: 0px;
+    z-index: 100;
     overflow: hidden;
-    
-    /* Animation state: Hidden */
     max-height: 0;
     opacity: 0;
-    transform: translateY(-10px);
-    transition: all 0.4s ease-in-out;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0, 1, 0, 1);
     pointer-events: none;
 }
 
-/* Open State Toggle */
 .custom-select.active .options-menu {
     max-height: 300px;
     opacity: 1;
-    transform: translateY(0);
     pointer-events: all;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.4);
 }
 
 .custom-select.active .arrow {
     transform: rotate(-135deg);
     margin-bottom: -4px;
+    border-color: var(--accent-yellow);
 }
 
 .option {
     padding: 1rem;
-    color: var(--subtext);
+    color: var(--fg-text);
     cursor: pointer;
     text-align: left;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.15s ease;
 }
 
 .option:hover {
-    background-color: var(--base);
-    color: var(--lavender);
+    background-color: var(--bg-border);
+    color: var(--accent-yellow);
     padding-left: 1.5rem;
 }
 
-/* --- ADDRESS BOX & BUTTON --- */
 .ip-box {
-    background-color: var(--base);
+    background-color: var(--bg-main);
     padding: 1.2rem;
-    border-radius: 12px;
+    border-radius: 0px;
     margin-bottom: 1.5rem;
-    border: 1px solid var(--surface1);
+    border: 2px solid var(--bg-border);
     min-height: 60px;
     display: flex;
     align-items: center;
@@ -154,32 +104,62 @@ body {
 }
 
 code {
-    color: var(--green);
+    color: var(--accent-green);
     font-size: 0.9rem;
     word-break: break-all;
+    font-weight: bold;
 }
 
 .link-card-btn {
     width: 100%;
-    border: none;
-    background-color: var(--lavender);
-    color: var(--base);
+    border: 2px solid transparent;
+    background-color: var(--accent-blue);
+    color: var(--bg-element);
     padding: 1rem;
-    border-radius: 12px;
+    border-radius: 0px;
     font-weight: bold;
     cursor: pointer;
     font-family: inherit;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.15s ease-in-out;
 }
 
 .link-card-btn:hover {
-    transform: translateY(-3px);
-    background-color: var(--lavender);
-    box-shadow: 0 0 15px rgba(203, 166, 247, 0.4);
+    transform: translate(-2px, -2px);
+    background-color: var(--accent-yellow);
+    box-shadow: 4px 4px 0px var(--accent-orange);
 }
 
-footer {
-    margin-top: 3rem;
+/* Header & Controls Anpassung für Symmetrie */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.header-controls {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.theme-toggle, .lang-btn {
     font-size: 0.8rem;
-    color: var(--surface1);
+    padding: 0.4rem 0.8rem;
+    background-color: var(--bg-element);
+    border: 2px solid var(--bg-border);
+    color: var(--fg-text);
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0px;
+    display: inline-block;
+    transition: all 0.15s ease-in-out;
+}
+
+.theme-toggle:hover, .lang-btn:hover {
+    border-color: var(--accent-blue);
+    color: var(--accent-yellow);
+    background-color: var(--bg-border);
 }
