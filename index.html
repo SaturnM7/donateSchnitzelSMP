@@ -5,13 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Server Donations</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('lang') !== 'en' && navigator.language && navigator.language.startsWith('de')) {
+            window.location.href = "donate_de.html";
+        }
+    </script>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1 class="glow">Donations</h1>
+        <div class="top-bar">
+            <h1 class="glow">Donations</h1>
+            <div class="header-controls">
+                <button id="theme-btn" class="theme-toggle">Light</button>
+                <a href="donate_de.html" class="lang-btn">DE</a>
+            </div>
+        </div>
         <p class="subtitle">Support SchnitzelSMP</p>
     </header>
 
@@ -21,7 +32,6 @@
         </section>
 
         <div class="expandable-container">
-            <!-- The Slide-out Selector -->
             <div class="custom-select" id="coin-select-wrapper">
                 <div class="select-trigger" id="select-trigger">
                     <span id="selected-coin-name">Select a coin</span>
@@ -35,7 +45,6 @@
                 </div>
             </div>
 
-            <!-- Address Display -->
             <div id="address-box" class="ip-box">
                 <code id="address-text">---</code>
             </div>
@@ -49,6 +58,6 @@
     </footer>
 </div>
 
-<script src="script.js"></script>
+<script src="donate.js"></script>
 </body>
 </html>
