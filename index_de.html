@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Spenden</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="top-bar">
+            <h1 class="glow">Spenden</h1>
+            <div class="header-controls">
+                <button id="theme-btn" class="theme-toggle">☀️ Light Mode</button>
+                <a href="donate.html?lang=en" class="lang-btn">EN</a>
+            </div>
+        </div>
+        <p class="subtitle">Unterstütze SchnitzelSMP</p>
+    </header>
+
+    <main>
+        <section class="about">
+            <p style="margin-bottom: 30px;">Wähle eine Kryptowährung, um die Adresse anzuzeigen</p>
+        </section>
+
+        <div class="expandable-container">
+            <div class="custom-select" id="coin-select-wrapper">
+                <div class="select-trigger" id="select-trigger">
+                    <span id="selected-coin-name">Wähle einen Coin</span>
+                    <div class="arrow"></div>
+                </div>
+                
+                <div class="options-menu" id="options-menu">
+                    <div class="option" data-addr="bc1qam7xru6auywjtaywujlamx4ce43vvl4qm7fv9c">Bitcoin (BTC)</div>
+                    <div class="option" data-addr="ltc1qtzhy9xhl334vkl83r7r5kygtp8697ffwvwhhhx">Litecoin (LTC)</div>
+                    <div class="option" data-addr="0x733309d8c57852c1a62E37642138Bae07c4C56e7">Ethereum (ETH)</div>
+                </div>
+            </div>
+
+            <div id="address-box" class="ip-box">
+                <code id="address-text">---</code>
+            </div>
+
+            <button id="copy-btn" class="link-card-btn">Adresse kopieren</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>Du könntest der Grund sein, warum wir diesen Server verbessern können! ;)</p>
+    </footer>
+</div>
+
+<script src="donate.js"></script>
+</body>
+</html>
