@@ -1,5 +1,50 @@
-/* --- SPENDEN INTERFACE ERGÄNZUNGEN (Gruvbox Hard-Edge) --- */
+/* --- GRUVBOX HARD-EDGE (Dark 1 Base) --- */
+:root {
+    --bg-main: #3c3836;       /* Gruvbox Dark 1 (Haupt-Hintergrund) */
+    --bg-element: #282828;    /* Gruvbox Dark 0 (Container/Boxen) */
+    --bg-border: #504945;     /* Gruvbox Dark 2 (Rahmen/Linien) */
+    --fg-text: #fbf1c7;       /* Gruvbox Light 0 (Text) */
+    
+    --accent-blue: #83a598;   /* Helles Gruvbox Blau für bessere Lesbarkeit */
+    --accent-yellow: #fabd2f;  /* Gruvbox Gelb */
+    --accent-orange: #fe8019;  /* Gruvbox Orange */
+    --accent-green: #b8bb26;   /* Gruvbox Grün */
+}
 
+/* Globales Basis-Styling für den Server */
+body {
+    background-color: var(--bg-main);
+    color: var(--fg-text);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 480px;
+    padding: 20px;
+}
+
+/* Der Leuchteffekt für die Überschrift */
+.glow {
+    color: var(--accent-yellow);
+    text-shadow: 0 0 10px rgba(250, 189, 47, 0.4);
+    margin: 0;
+}
+
+.subtitle {
+    color: #a89984; /* Gruvbox Gray */
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+/* --- AB HIER FOLGT IHR BESTEHENDER CODE --- */
+/* --- SPENDEN INTERFACE ERGÄNZUNGEN (Gruvbox Hard-Edge) --- */
 .expandable-container {
     background-color: var(--bg-element);
     border-radius: 0px; /* Harte Ecken */
