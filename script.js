@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'light') {
         document.documentElement.setAttribute('data-theme', 'light');
-        if (themeBtn) themeBtn.innerText = "🌑 Dark Mode";
+        if (themeBtn) themeBtn.innerText = "Dark";
     }
 
     if (themeBtn) {
@@ -74,11 +74,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             if (currentTheme === 'light') {
                 document.documentElement.removeAttribute('data-theme');
-                themeBtn.innerText = "☀️ Light Mode";
+                themeBtn.innerText = "Light";
                 localStorage.setItem('theme', 'dark');
             } else {
                 document.documentElement.setAttribute('data-theme', 'light');
-                themeBtn.innerText = "🌑 Dark Mode";
+                themeBtn.innerText = "Dark";
                 localStorage.setItem('theme', 'light');
             }
         });
